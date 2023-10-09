@@ -7,9 +7,17 @@ export default class Form extends React.Component {
   // hide completed button
   render() {
     return (
-      <div>
-        Form
-      </div>
+      <form>
+        <label> What needs done today? <br/>
+          <input type='text' />
+        </label><br/><br/>
+        <button>
+          Add Todo
+        </button>
+        <button>
+          Hide Completed
+        </button>
+      </form>
     )
   }
 }
