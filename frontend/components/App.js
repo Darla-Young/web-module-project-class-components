@@ -1,5 +1,5 @@
 import React from 'react'
-import TodoList from './TodoList'
+import Todo from './Todo'
 import Form from './Form'
 
 export default class App extends React.Component {
@@ -33,8 +33,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList todoArr={this.todoArr} onClick={this.onClick} data={this.state} />
-        <Form onChange={this.onChange} onSubmit={this.onSubmit} />
+        <Todo onClick={this.onClick} data={this.state} />
+        <Form onChange={this.onChange} onSubmit={this.onSubmit} name={this.state.name} completed={this.state.completed} />
       </div>
     )
   }

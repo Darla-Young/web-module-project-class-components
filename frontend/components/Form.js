@@ -7,9 +7,9 @@ export default class Form extends React.Component {
   // hide completed button
   render() {
     return (
-      <form>
+      <form onSubmit={this.props.onSubmit} >
         <label> What needs done today? <br/>
-          <input type='text' />
+          <input name='todoName' type='text' onChange={this.props.onChange} value={this.props.name} />
         </label><br/><br/>
         <button>
           Add Todo
