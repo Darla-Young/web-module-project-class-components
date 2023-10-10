@@ -10,6 +10,7 @@ export default class Todo extends React.Component {
     if (this.props.state.hidden){
       this.toggledArr = this.props.list.filter(i => !i.completed)
     } else {this.toggledArr = this.props.list}
+    console.log(this.toggledArr)
     return (
       <ul >
         {(this.toggledArr || []).map(i => {

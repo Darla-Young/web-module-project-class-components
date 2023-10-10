@@ -20,12 +20,14 @@ export default class App extends React.Component {
   onClick = e => {
     e.target.id === "toggle" ?
     this.setState({...this.state, hidden: !this.state.hidden}) :
+    console.log(this.todoArr)
     this.todoArr.map(i => {
       if(i.id == e.target.id){
-        return ({
+        console.log(i.completed)
+        return {
           ...i,
           completed: !i.completed
-        })
+        }
       } else {return i}
     })
   }
