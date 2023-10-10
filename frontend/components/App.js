@@ -18,23 +18,25 @@ export default class App extends React.Component {
   // handler functions
     // onClick
   onClick = e => {
+    // console.log(this.todoArr)
     e.target.id === "toggle" ?
     this.setState({...this.state, hidden: !this.state.hidden}) :
-    console.log(this.todoArr)
+    // console.log(this.todoArr)
     this.todoArr.map(i => {
       if(i.id == e.target.id){
-        console.log(i.completed)
-        return {
-          ...i,
-          completed: !i.completed
-        }
+        i.completed = !i.completed
+        return i
       } else {return i}
     })
   }
   
     // onChange
   onChange = e => {
-    this.setState({...this.state, name: e.target.value})
+    if(e.target.type === 'checkbox'){
+      this.setState({...this.state})
+    } else {
+      this.setState({...this.state, name: e.target.value})
+    }
   }
   
     // onSubmit
@@ -53,7 +55,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Todo onClick={this.onClick} list={this.todoArr} state={this.state} />
+        <Todo onClick={this.onClick} onChange={this.onChange} list={this.todoArr} state={this.state} />
         <Form onChange={this.onChange} onSubmit={this.onSubmit} state={this.state} onClick={this.onClick} />
       </div>
     )

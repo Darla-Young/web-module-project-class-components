@@ -16,7 +16,7 @@ export default class Todo extends React.Component {
         {(this.toggledArr || []).map(i => {
           return (
             <li key={i.id} onClick={this.props.onClick} >
-              <input type='checkbox' value={i.completed} id={i.id} />
+              <input type='checkbox' checked={i.completed} id={i.id} onChange={this.props.onChange} />
               {i.name}
             </li>
           )
