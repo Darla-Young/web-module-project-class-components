@@ -5,14 +5,17 @@ import React from 'react'
   // displays Todo to the screen
 
 export default class Todo extends React.Component {
+
+  // toggles which todos to display
   toggledArr = []
   render() {
     if (this.props.state.hidden){
       this.toggledArr = this.props.list.filter(i => !i.completed)
     } else {this.toggledArr = this.props.list}
-    console.log(this.toggledArr)
+
+    // displays desired todos
     return (
-      <ul >
+      <ul>
         {(this.toggledArr || []).map(i => {
           return (
             <li key={i.id} onClick={this.props.onClick} >

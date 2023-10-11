@@ -1,10 +1,21 @@
 import React from 'react'
 
-export default class Form extends React.Component {
   // holds input field
   // add Todo button
   // hide completed button
+
+export default class Form extends React.Component {
+
   render() {
+    // displays hide completed button only after first todo has been submitted
+    let button = ""
+    if(this.props.list.length > 0){
+      button = 
+        <button id='toggle' onClick={this.props.onClick}>
+          {this.props.state.hidden ? "Show Completed" : "Hide Completed"}
+        </button>
+    }
+
     return (
       <div>
         <form onSubmit={this.props.onSubmit} >
@@ -13,9 +24,7 @@ export default class Form extends React.Component {
             Add Todo
           </button>
         </form>
-        <button id='toggle' onClick={this.props.onClick}>
-          {this.props.state.hidden ? "Show Completed" : "Hide Completed"}
-        </button>
+        {button}
       </div>
     )
   }

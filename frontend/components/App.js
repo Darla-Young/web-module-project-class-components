@@ -56,7 +56,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Todo onClick={this.onClick} onChange={this.onChange} list={this.todoArr} state={this.state} />
-        <Form onChange={this.onChange} onSubmit={this.onSubmit} state={this.state} onClick={this.onClick} />
+        <Form onClick={this.onClick} onChange={this.onChange} onSubmit={this.onSubmit} state={this.state} list={this.todoArr} />
       </div>
     )
   }
